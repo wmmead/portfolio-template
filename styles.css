@@ -1,79 +1,30 @@
 
 /********************* NOTES ************************
-I have included font awesome. The font for it is in the
-fonts folder and the css for it is in the fontawesomecss
-folder and imported below.
-****************************************************/
-@import 'fontawesomecss/font-awesome.min.css';
-
-
-
-/********************* NOTES ************************
-I still prefer the Eric Meyer CSS Reset to other methods
-of ensuring spacing remains the same across browsers...
+The basic resets below allow you to create your own styling
+without having to fight some of the most annoying built in 
+agent user styles.
 ****************************************************/
 
-/************* Eric Meyer CSS Reset ***************/
+/************* Basic Resets ***************/
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+h1, h2, h3, h4, p, ul, ol, blockquote {
 	margin: 0;
 	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
 }
 
-
-/********************* NOTES ************************
-I add a few of my own rules the the reset. Note the
-inclusion of the img rule and the box-sizing rule on
-all elements. This last rule will make all block level
-elements include the padding and borders as part of the
-width of the element.
-****************************************************/
+nav ul, nav ol {
+	list-style-type: none;
+}
 
 /******** Additional resets *********/
 a { text-decoration:none; }
-em { font-style:italic; }
-strong { font-weight:bold;}
-img { max-width:100% }
-* { box-sizing:border-box; }
+
+img {
+	display: block;
+	max-width:100%; 
+}
+
+* { box-sizing: border-box; }
 
 /************ End CSS Reset  *************/
 
@@ -111,18 +62,6 @@ body {
 	font-family:Georgia;
 	color:#333;
 	background:#333;
-}
-
-/********************* NOTES ************************
-The wrapper sits inside each section and contains the
-content for that section.
-****************************************************/
-
-.wrapper {
-	width:1020px;
-	margin:auto;
-	overflow:hidden;
-	padding:40px 0;
 }
 
 /************* typography ************/
@@ -170,36 +109,25 @@ a { color: #4574b5; }
 .secondary { background:#efefef; }
 
 
-/********************* NOTES ************************
-The grid is set up to use percentages. There is a 4% margin
-on the left side of each column, but this is removed for
-the first column in the row. If you have more columns than
-fit in 100% of the space, put them in rows.
-
-This grid will allow you to have one, two, three or four
-columns in a row. Two and three column layouts can be set
-up in multiple ways (half and half, one third and two thirds, etc...)
-****************************************************/
-
-.row { overflow:hidden; margin-bottom: 40px; }
-.column { float: left; margin-left:4%; }
-.column:first-of-type { margin-left:0; }
-
-.full { width: 100%; }
-.half { width: 48%; }
-.one-quarter { width:22%; }
-.one-third { width:30.6666666667%; }
-.two-thirds { width:65.3333333333%; }
-.three-quarters { width:74.0%; }
-
-.border { border: 2px solid #CFCFCF; }
-
-
-
 /****************** Header and Main Navigation ****************/
 
+header {
+	padding: 20px;
+}
+
+header .wrapper {
+	display: flex;
+	flex-direction: column-reverse;
+	flex-wrap: wrap;
+}
+
+.logo-container {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: flex-end;
+}
+
 #logo {
-	float:left;
 	margin-right:20px;
 }
 
@@ -209,16 +137,12 @@ the font, you may have to change the width defined below.
 ****************************************************/
 
 #mainnav {
-	width:290px;
-	float:right;
+	margin-bottom: 20px;
 }
 
 #mainnav ul {
-	overflow:hidden;
-}
-
-#mainnav ul li {
-	float:left;
+	display: flex;
+	justify-content: center;
 }
 
 #mainnav ul li a {
@@ -237,19 +161,29 @@ Removes the border on the first link...
 	border:none;
 }
 
-/********************* NOTES ************************
-Removes the padding on the last link...
-****************************************************/
-
-#mainnav ul li:last-of-type a {
-	padding-right:0;
-}
-
 
 /***************** Section Specific Rules *****************/
 
 #work {
 	background:#fff;
+	padding: 20px;
+}
+
+#work img, .additional-projects img {
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.featured, .projects, #page-template #work section {
+	margin-bottom: 40px;
+}
+
+#about-contact, .additional-projects {
+	padding: 20px;
+}
+
+#about-contact img {
+	margin-bottom: 10px;
 }
 
 /********************* NOTES ************************
@@ -260,26 +194,109 @@ the top of the page.
 ****************************************************/
 
 footer {
+	padding: 20px;
 	margin-bottom:600px;
 }
 
-
-/********************* NOTES ************************
-If you want to make the page responsive, addign the rule
-below is a good start. Just remove this comment and see
-what it does.
-
-
-@media (max-width: 1020px){
+@media only screen and (min-width: 650px) {
+	#work {
+		padding: 20px 10px;
+	}
 	
-	.wrapper {
-		width:100%;	
+	#work article, h2 {
+		padding: 0 10px;
+	}
+	
+	.projects, #page-template #work section  {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	
+	.projects article, #page-template #work section article {
+		width: 50%;
+	}
+	
+	.additional-projects .wrapper{
+		display: flex;
+		flex-wrap: wrap;
+	}
+	
+	.additional-projects h2 {
+		flex-basis: 100%;
+	}
+	
+	.additional-projects article {
+		width: 50%;
+		padding: 0 10px;
+	}
+	
+	#about-contact {
+		padding: 0;
+	}
+	
+	#about-contact .wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		padding: 20px 10px;
+	}
+	
+	#about-contact .profile-photo {
+		flex: 1;
+		padding: 0 10px;
+		width: 100%;
+	}
+	
+	#about-contact article {
+		padding: 0 10px;
+	}
+	
+	#about-contact article:first-of-type {
+		flex: 2;
+	}
+	
+	#about-contact article:last-of-type {
+		flex-basis: 100%;
+	}
+	
+}
+
+@media only screen and (min-width: 768px) {
+	
+	.featured {
+		display: flex;
+	}
+	
+	.featured article {
+		flex: 1;
+	}
+	
+	.additional-projects article {
+		width: 25%;
+	}
+	
+	#about-contact .wrapper {
+		flex-wrap: nowrap;
+	}
+	
+	#about-contact article:last-of-type {
+		flex: 2;
+		flex-basis: 0;
 	}
 }
 
-
-don't forget to remove the line below as well...
-****************************************************/
-
+@media only screen and (min-width: 1040px) {
+	.wrapper {
+		width: 1020px;
+		margin: auto;
+	}
 	
+	header .wrapper {
+		padding: 0 10px;
+	}
 	
+	/*Change the width here to 33% if you want three articles in a row*/
+	.projects article {
+		width: 25%;
+	}
+}

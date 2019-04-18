@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="UTF-8">
+	<meta charset="UTF-8">
 
 	<!--/ /---- Put your name in the title of the page ----/ /-->
 	<title>Put Your Name Here</title>
@@ -29,21 +29,29 @@
 <body>
 	
     <!-- ------------------------------------------------------
-    This is the header section. It stretches across the whole 
-    browser window, and the wrapper inside keeps the content to 
-    1020px wide and is centered within the header. Each section is
-    set up this way.
+    The site is designed to be mobile first. The wrapper elements
+	are in place for when you get to desktop size to contain the 
+	content.
     ------------------------------------------------------- -->
     
 	<header class="primary">
         <div class="wrapper">
-        
-        	<!-- ------------------------------------------------------
+            
+			<div class="logo-container">
+				<h1>Your<br>Name<br>Portfolio</h1>
+
+				<!-- ------------------------------------------------------
+				Note that the image of the logo is linked to the home page.
+				------------------------------------------------------- -->
+				<a href="index.html"><img src="http://placehold.it/175?text=logo" alt="logo image" id="logo"></a>
+			</div>
+            
+            
+			<!-- ------------------------------------------------------
             The navigation here is linking to the sections further down
             the page.
             ------------------------------------------------------- -->
-        
-        	<nav id="mainnav">
+			<nav id="mainnav">
             	<ul>
                 	<li><a href="#work">Work</a></li>
                     <li><a href="#about-contact">About</a></li>
@@ -51,41 +59,20 @@
                 </ul>
             </nav>
             
-            <!-- ------------------------------------------------------
-            Note that the image of the logo is linked to the home page.
-            ------------------------------------------------------- -->
-        	<a href="index.html"><img src="http://placehold.it/175?text=logo" alt="logo image" id="logo"></a>
-            
-            <h1>Your<br>Name<br>Portfolio</h1>
-            
         </div>
         
     </header>
     
-    
-    
     <!-- ------------------------------------------------------
-    This is the work section. Inside the wrapper are two rows.
-    The first row contains a featured image and a challenge statement
-    inside two columns.
-    
-    This project includes a simple grid and can be organized in
-    several different ways. Inside a row have elements with the class
-    of column and a class for how wide you want that column to be.
-    
-    For example, you can have "column half" and "column half", or
-    you can have "column one-third" and "column two-thirds"
-    
-    The grid includes, full, half, one-third, two-thirds, one-quarter
-    and three-quarters, giving quite a lot of flexibility for sections
-    with one, two, three or four columns.
+    This is the work section, which has two parts: the featured
+	section and the projects section.
     ------------------------------------------------------- -->
     
     <section id="work">
    		<div class="wrapper">
         	<h2>Check Out My Best Projects</h2>
-        	<section class="row">
-                <article class="column half">
+        	<section class="featured">
+                <article>
                 	<!-- ------------------------------------------------------
                     Link the image below to the detail page for this project.
                     Use the page.html file to make that page. Also link the 
@@ -94,7 +81,7 @@
                 	<a href="#"><img src="http://placehold.it/510x300?text=Featured+Project" alt="image"></a>
                 </article>
                 
-                <article class="column half">
+                <article>
                 	<h3>Title of Project</h3>
                     <h4>Challenge Statement</h4>
                     <p>Before they sold out single-origin coffee fingerstache sartorial freegan master cleanse. Sartorial blog fap, shoreditch scenester tacos poutine. Bespoke brunch viral listicle, keffiyeh celiac paleo organic scenester next level cliche put a bird on it cardigan. Forage kombucha pitchfork literally. Art party narwhal food truck selfies, XOXO leggings distillery four loko fap.</p> <p><a href="#">Find out how I solved this problem</a></p> 
@@ -103,33 +90,39 @@
             
             
             <!-- ------------------------------------------------------
-            This second row contains images for other projects. If you 
-            have more projects, you could change the classes on the articles
-            to one-quarter and have room for four articles in the row.
-            Or you could add more rows.
+            The projects section is for additional projects. I put four in
+			here, but it could be more, or less. You just have to pay
+			attention to how they wrap, and how many you want per row.
             
             Note that each image should be linked to the page with more
             detailed information about that project. You can use a copy of
             page.html to create those pages.
             ------------------------------------------------------- -->
             
-            <section class="row">
+            <section class="projects">
             
-            	<article class="column one-third">
+            	<article>
                 	<h3>Project Title</h3>
                 	<a href="#"><img src="http://placehold.it/340x200?text=Another+Project" alt="image"></a>
                     <p><strong>Role:</strong> Designer</p>
                     <p><strong>Description:</strong> Website for a restaurant and redesigned the online menu.</p>
                 </article>
                 
-                <article class="column one-third">
+                <article>
                 	<h3>Project Title</h3>
                 	<a href="#"><img src="http://placehold.it/340x200?text=Another+Project" alt="image"></a>
                     <p><strong>Role:</strong> Designer</p>
                     <p><strong>Description:</strong> Website for a restaurant and redesigned the online menu.</p>
                 </article>
                 
-                <article class="column one-third">
+                <article>
+                	<h3>Project Title</h3>
+                	<a href="#"><img src="http://placehold.it/340x200?text=Another+Project" alt="image"></a>
+                    <p><strong>Role:</strong> Designer</p>
+                    <p><strong>Description:</strong> Website for a restaurant and redesigned the online menu.</p>
+                </article>
+				
+				<article>
                 	<h3>Project Title</h3>
                 	<a href="#"><img src="http://placehold.it/340x200?text=Another+Project" alt="image"></a>
                     <p><strong>Role:</strong> Designer</p>
@@ -145,54 +138,46 @@
     <!-- ------------------------------------------------------
     This is the about and contact section. The links in the main
     navigation link to this section. 
-    
-    This section shows how flexible this grid can be. Inside the 
-    wrapper, I have two columns. The first is one-quarter and the
-    second is three-quarters. Then inside the three-quarters column, 
-    I have two articles each set to take up one half of the space 
-    available.
     ------------------------------------------------------- -->
     
     <section id="about-contact" class="secondary">
    		<div class="wrapper">
-        
-        	<section class="column one-quarter">
+        	
+			<div class="profile-photo">
             	<img src="http://placehold.it/260?text=Your+Photo" alt="image">
-            </section>
-            
-            <section class="column three-quarters">
-                <article class="column half">
-                    <h2>About Me</h2>
-                    <p>Fixie owner, father of 3, fender owner, reclaimed wood collector and javascripter. Acting at the junction of minimalism and intellectual purity to create great work for living breathing human beings. I'm a designer and this is my work.</p>
-                    <h3>Skills</h3>
-                    <p>I am particularly good at BLAH BLAH and really enjoy BLAH. I am currently learning BLAH and I'm very exited about BLAH BLAH.</p>
-                </article> 
+            </div>
+			
+            <article>
+				<h2>About Me</h2>
+				<p>Fixie owner, father of 3, fender owner, reclaimed wood collector and javascripter. Acting at the junction of minimalism and intellectual purity to create great work for living breathing human beings. I'm a designer and this is my work.</p>
+				<h3>Skills</h3>
+				<p>I am particularly good at BLAH BLAH and really enjoy BLAH. I am currently learning BLAH and I'm very exited about BLAH BLAH.</p>
+			</article> 
                 
-                <article class="column half">
-                    <h2>Contact Me!</h2>
-                    <p>I am currently looking for opportunities to work on a team at a design shop. Please feel free to contact me by phone, email or through the usual social media channels.</p>
-                    
-                    <!-- ------------------------------------------------------
-                    Be sure to encode your email address at this site, so you 
-                    don't get spam. http://wbwip.com/wbw/emailencoder.html
-                    ------------------------------------------------------- -->
-                    
-                    <p><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:&#101;&#109;&#097;&#105;&#108;&#064;&#115;&#111;&#109;&#101;&#119;&#104;&#101;&#114;&#101;&#046;&#099;&#111;&#109;">&#101;&#109;&#097;&#105;&#108;&#064;&#115;&#111;&#109;&#101;&#119;&#104;&#101;&#114;&#101;&#046;&#099;&#111;&#109;</a><br>
-                    <i class="fa fa-phone" aria-hidden="true"></i> 123-456-7890</p>
-                    
-                    <!-- ------------------------------------------------------
-                    You can see here that I have included font-awesome. It is used
-                    to create the icons above and below. You can go to the font-awesome
-                    website to see the available icons and swap some out.
-                    ------------------------------------------------------- -->
-                    
-                    <p class="social">
-                        <a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a> 
-                        <a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
-                    </p>
-                </article>
-            </section>
+			<article>
+				<h2>Contact Me!</h2>
+				<p>I am currently looking for opportunities to work on a team at a design shop. Please feel free to contact me by phone, email or through the usual social media channels.</p>
+
+				<!-- ------------------------------------------------------
+				Be sure to encode your email address at this site, so you 
+				don't get spam. http://wbwip.com/wbw/emailencoder.html
+				------------------------------------------------------- -->
+
+				<p><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:&#101;&#109;&#097;&#105;&#108;&#064;&#115;&#111;&#109;&#101;&#119;&#104;&#101;&#114;&#101;&#046;&#099;&#111;&#109;">&#101;&#109;&#097;&#105;&#108;&#064;&#115;&#111;&#109;&#101;&#119;&#104;&#101;&#114;&#101;&#046;&#099;&#111;&#109;</a><br>
+				<i class="fa fa-phone" aria-hidden="true"></i> 123-456-7890</p>
+
+				<!-- ------------------------------------------------------
+				You can see here that I have included font-awesome. It is used
+				to create the icons above and below. You can go to the font-awesome
+				website to see the available icons and swap some out.
+				------------------------------------------------------- -->
+
+				<p class="social">
+					<a href="#"><i class="fab fa-facebook"></i></a>
+					<a href="#"><i class="fab fa-linkedin"></i></a> 
+					<a href="#"><i class="fab fa-twitter-square"></i></a>
+				</p>
+			</article>
                    
         </div>
     </section>
@@ -204,7 +189,7 @@
     ------------------------------------------------------- -->
     <footer class="primary">
     	<div class="wrapper">
-        	<p class="centered">&copy; 2016 all rights reserved</p>
+        	<p class="centered">&copy; 2019 all rights reserved</p>
         </div>
     </footer>
 
