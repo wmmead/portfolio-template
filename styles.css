@@ -22,6 +22,7 @@ a { text-decoration:none; }
 img {
 	display: block;
 	max-width:100%; 
+	height: auto;
 }
 
 * { box-sizing: border-box; }
@@ -131,10 +132,6 @@ header .wrapper {
 	margin-right:20px;
 }
 
-/********************* NOTES ************************
-The main navigation is floated to the right. If you change
-the font, you may have to change the width defined below.
-****************************************************/
 
 #mainnav {
 	margin-bottom: 20px;
